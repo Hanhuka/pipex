@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:17:17 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/07/26 17:17:17 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:26:22 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	free_all(t_pipex *p)
 	while (p->arg[++i])
 		free(p->arg[i]);
 	free(p->arg);
-	close(p->infile);
+	if (p->infile > 0)
+		close(p->infile);
 	close(p->outfile);
 }
 
@@ -41,7 +42,7 @@ void	ft_err(t_pipex *p, char *str)
 void	special_err(t_pipex *p, char *str)
 {
 	perror(str);
-	free_not_all(p);
+	free_all(p);
 	exit(1);
 }
 

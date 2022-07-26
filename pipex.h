@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 12:20:46 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/07/25 13:53:21 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:22:18 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ char	**ft_split(char const *str, char c);
 char	*ft_substr(char const *str, int start, int end);
 
 //errors&frees.c
-void	free_not_all(t_pipex *p);
 void	free_all(t_pipex *p);
 void	ft_err(t_pipex *p, char *str);
 void	special_err(t_pipex *p, char *str);
